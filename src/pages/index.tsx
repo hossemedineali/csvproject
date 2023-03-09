@@ -3,11 +3,8 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 
-import { trpc } from "@/utils/trpc";
 
 const Home: NextPage = () => {
-  const x=trpc.hello.useQuery({text:'hosse!'})
-  console.log(x.data)
 
   return (
     <>
@@ -24,6 +21,7 @@ const Home: NextPage = () => {
             viewBox="0 0 34 27"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            className="ml-8"
           >
             <path
               d="M3.09091 0H15.4545V3H3.09091V21H15.4545V3H18.5455V21H30.9091V3H18.5455V0H34V24H18.5455V27H15.4545V24H0V0H3.09091ZM27.8182 10.5H21.6364V13.5H27.8182V10.5ZM21.6364 6H27.8182V9H21.6364V6ZM24.7273 15H21.6364V18H24.7273V15Z"
@@ -35,16 +33,33 @@ const Home: NextPage = () => {
             id="countries"
             className="block h-4  w-28   rounded-sm bg-[#7E7E7E] p-2.5 text-sm "
           >
-            <option selected></option>
-            <option value="US">Economy</option>
-            <option value="CA">Policy</option>
-            <option value="FR">Corporate</option>
-            <option value="DE">Markets</option>
-            <option value="DE">Investments</option>
+            <option value={''}></option>
+            <option value="Economy">Economy</option>
+            <option value="Policy">Policy</option>
+            <option value="Corporate">Corporate</option>
+            <option value="Markets">Markets</option>
+            <option value="Investments">Investments</option>
 
           </select>
           </div>
-        <div className="p-1 w-full flex-grow  flex">
+        <div className="p-1 w-full flex-grow  flex ">
+          <div className="hidden md:w-2/12 gap-5 md:flex pt-5 md:flex-col   flex-wrap items-center">
+          <svg className="" width="32" height="29" viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="32" height="29" rx="3" fill="#9E9A9A"/>
+<path d="M8 7H26V21H20V23H12V21H6V7H8ZM24 19V9H8V19H24Z" fill="black"/>
+</svg>
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.22222 0H0V20H20V0H2.22222ZM17.7778 2.22222V17.7778H2.22222V2.22222H17.7778ZM6.66667 8.88889H4.44444V15.5556H6.66667V8.88889ZM8.88889 4.44444H11.1111V15.5556H8.88889V4.44444ZM15.5556 11.1111H13.3333V15.5556H15.5556V11.1111Z" fill="#9E9A9A"/>
+</svg>
+<svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0H20V18H0V0ZM2 4V9H9V4H2ZM11 4V9H18V4H11ZM18 11H11V16H18V11ZM9 16V11H2V16H9Z" fill="#9E9A9A"/>
+</svg>
+
+
+
+
+
+          </div>
           <div className="bg-[#7e7e7e] w-full md:w-10/12  md:ml-auto md:mr-2  px-1  md:px-2 py-2 md:py-1 rounded-md ">
             <PostGroup/>
           </div>
